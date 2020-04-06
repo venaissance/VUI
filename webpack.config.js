@@ -1,7 +1,5 @@
 const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
-  mode: 'production',
   entry: {
     VUI: './lib/index.tsx'
   },
@@ -19,24 +17,4 @@ module.exports = {
       loader: 'awesome-typescript-loader'
     }]
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: 'VUI - React UI Library',
-      template: 'index.html'
-    })
-  ],
-  externals: {
-    react: {
-      commonjs: 'react',
-      commonjs2: 'react',
-      amd: 'react',
-      root: 'React',
-    },
-    'react-dom': {
-      commonjs: 'react-dom',
-      commonjs2: 'react-dom',
-      amd: 'react-dom',
-      root: 'ReactDOM',
-    },
-  }
 }
