@@ -1,5 +1,5 @@
 {
-  "name": "VUI",
+  "name": "vui",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/venaissance/VUI#readme",
   "devDependencies": {
     "awesome-typescript-loader": "^5.2.1",
+    "typescript": "^3.8.3",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3"
   }
