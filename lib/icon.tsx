@@ -1,16 +1,18 @@
 import React from 'react';
 import './importIcons.js';
 import './icon.scss';
+import './helpers/combineClassNames';
+import combineClassNames from './helpers/combineClassNames';
 
-interface IconProps {
+interface IconProps extends React.SVGAttributes<SVGElement> {
   name: string;
-  onClick?: React.MouseEventHandler;
 }
 
 const Icon: React.FunctionComponent<IconProps> = props => {
+  const {className, ...restProps} = props;
   return (
     <span>
-      <svg className="vui-icon" onClick={props.onClick}>
+      <svg className={combineClassNames('vui-icon', className)} {...restProps} >
         <use xlinkHref={`#${props.name}`}/>
       </svg>
       <span>{props.name}</span>
