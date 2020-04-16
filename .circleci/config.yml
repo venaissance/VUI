@@ -32,13 +32,24 @@ jobs:
           root: .
           paths:
             - dist
+            - package.json
+            - LICENSE
+            - README.md
+  publish:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: .
+      - run: npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
+      - run: npm publish
+
   test:
     <<: *defaults
     steps:
       - checkout
       - attach_workspace:
           at: .
-      - run: yarn ci
+      - run: yarn run ci -u
       - store_test_results:
           path: test-results
 
@@ -50,6 +61,14 @@ workflows:
       - build:
           requires:
             - test
+      - publish:
+          requires:
+            - build
+#          filters: 加了之后就publish就从workflow里消失了，无解bug
+#            tags:
+#              only: /^v.*/
+#            branches:
+#              ignore: /.*/
       - test:
           requires:
             - prepare

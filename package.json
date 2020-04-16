@@ -1,14 +1,17 @@
 {
-  "name": "vui",
-  "version": "1.0.0",
+  "name": "vui666",
+  "version": "0.0.12",
   "description": "",
   "main": "dist/lib/VUI",
   "types": "dist/lib/index",
+  "files": [
+    "/dist/**/*"
+  ],
   "scripts": {
     "test": "cross-env NODE_ENV=test jest --config=jest.config.js --runInBand",
     "start": "cross-env NODE_ENV=development webpack-dev-server --config webpack.config.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
-    "ci": "cross-env NODE_ENV=test JEST_JUNIT_OUTPUT=./test-results/jest/results.xml jest --config=jest.config.js"
+    "ci": "cross-env NODE_ENV=test JEST_JUNIT_OUTPUT_NAME=./test-results/jest/results.xml jest --config=jest.config.js"
   },
   "repository": {
     "type": "git",
@@ -37,6 +40,7 @@
     "enzyme-adapter-react-16": "^1.15.2",
     "html-webpack-plugin": "^4.0.4",
     "jest": "^25.2.7",
+    "jest-junit": "^10.0.0",
     "node-sass": "npm:dart-sass",
     "react-test-renderer": "^16.13.1",
     "sass-loader": "^8.0.2",
