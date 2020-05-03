@@ -4,23 +4,31 @@ import {scopedClassMaker} from '../classes';
 import './dialog.scss';
 
 interface Props {
-  visible: boolean,
-  buttons: Array<ReactElement>,
-  onClose: React.MouseEventHandler,
+  visible: boolean;
+  buttons?: Array<ReactElement>,
+  onClose: React.MouseEventHandler;
+  maskClose?: Boolean;
 }
 
 const scopedClass = scopedClassMaker('vui-dialog');
 const sc = scopedClass;
 
 const Dialog: React.FunctionComponent<Props> = (props) => {
+
   const onClickClose: React.MouseEventHandler = (e) => {
     props.onClose(e);
+  };
+
+  const onClickMaskClose: React.MouseEventHandler = (e) => {
+    if (props.maskClose) {
+      props.onClose(e);
+    }
   };
 
   return (
     props.visible ?
       <Fragment>
-        <div className={sc('mask')}>
+        <div className={sc('mask')} onClick={onClickMaskClose}>
         </div>
         <div className={sc()}>
           <div className={sc('close')} onClick={onClickClose}>
@@ -33,16 +41,18 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
             {props.children}
           </main>
           <footer className={sc('footer')}>
-            {props.buttons &&
-            props.buttons.map((button, index) => {
-              React.cloneElement(button, {key: index});
-            })}
+            {props.buttons && props.buttons.map((button, index) =>
+              React.cloneElement(button, {key: index})
+            )}
           </footer>
         </div>
       </Fragment>
       :
-      null
-  );
+      null);
+};
+
+Dialog.defaultProps = {
+  maskClose: false
 };
 
 export default Dialog;
