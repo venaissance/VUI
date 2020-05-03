@@ -1,4 +1,5 @@
 import React, {Fragment, ReactElement} from 'react';
+import ReactDOM from 'react-dom';
 import {Icon} from '../index';
 import {scopedClassMaker} from '../classes';
 import './dialog.scss';
@@ -25,30 +26,32 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
     }
   };
 
+  const dialog = props.visible ?
+    <Fragment>
+      <div className={sc('mask')} onClick={onClickMaskClose}>
+      </div>
+      <div className={sc()}>
+        <div className={sc('close')} onClick={onClickClose}>
+          <Icon name="close"/>
+        </div>
+        <header className={sc('header')}>
+          提示
+        </header>
+        <main className={sc('main')}>
+          {props.children}
+        </main>
+        <footer className={sc('footer')}>
+          {props.buttons && props.buttons.map((button, index) =>
+            React.cloneElement(button, {key: index})
+          )}
+        </footer>
+      </div>
+    </Fragment>
+    :
+    null;
   return (
-    props.visible ?
-      <Fragment>
-        <div className={sc('mask')} onClick={onClickMaskClose}>
-        </div>
-        <div className={sc()}>
-          <div className={sc('close')} onClick={onClickClose}>
-            <Icon name="close"/>
-          </div>
-          <header className={sc('header')}>
-            提示
-          </header>
-          <main className={sc('main')}>
-            {props.children}
-          </main>
-          <footer className={sc('footer')}>
-            {props.buttons && props.buttons.map((button, index) =>
-              React.cloneElement(button, {key: index})
-            )}
-          </footer>
-        </div>
-      </Fragment>
-      :
-      null);
+    ReactDOM.createPortal(dialog, document.body)
+  );
 };
 
 Dialog.defaultProps = {
