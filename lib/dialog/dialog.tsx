@@ -58,4 +58,19 @@ Dialog.defaultProps = {
   maskClose: false
 };
 
+const alert = (content: string) => {
+  const component = <Dialog onClose={() => {
+    ReactDOM.render(React.cloneElement(component, {visible: false}), div);
+    ReactDOM.unmountComponentAtNode(div);
+    div.remove();
+  }} visible={true}>
+    {content}
+  </Dialog>;
+  const div = document.createElement('div');
+  document.body.appendChild(div);
+  ReactDOM.render(component, div);
+};
+
+export {alert};
+
 export default Dialog;
