@@ -1,11 +1,14 @@
-import Dialog, {alert} from './dialog';
+import Dialog, {alert, confirm} from './dialog';
 import React, {useState} from 'react';
 
 const DialogExample: React.FunctionComponent = () => {
   const [x, setX] = useState(false);
   const [y, setY] = useState(false);
+
+
   return (
     <div>
+
       <div>
         <h1>Default Dialog</h1>
         <button onClick={() => setX(!x)}>click</button>
@@ -33,6 +36,10 @@ const DialogExample: React.FunctionComponent = () => {
       <div>
         <h1>Alert</h1>
         <button onClick={() => alert('1')}>alert</button>
+      </div>
+      <div>
+        <h1>Confirm</h1>
+        <button onClick={() => confirm('1', () => {console.log('yes');}, () => {console.log('no');})}>confirm</button>
       </div>
 
     </div>
