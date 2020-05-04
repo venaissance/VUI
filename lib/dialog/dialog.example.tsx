@@ -1,13 +1,23 @@
-import Dialog, {alert, confirm} from './dialog';
+import Dialog, {alert, confirm, modal} from './dialog';
 import React, {useState} from 'react';
 
 const DialogExample: React.FunctionComponent = () => {
   const [x, setX] = useState(false);
   const [y, setY] = useState(false);
 
+  const modalClose = () => {
+    const close = modal(<div>Modal
+      <button onClick={() => close()}>close</button>
+    </div>);
+  };
 
   return (
     <div>
+
+      <div>
+        <h1>Modal</h1>
+        <button onClick={modalClose}>modal</button>
+      </div>
 
       <div>
         <h1>Default Dialog</h1>
