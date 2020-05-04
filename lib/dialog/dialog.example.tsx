@@ -4,21 +4,28 @@ import React, {useState} from 'react';
 const DialogExample: React.FunctionComponent = () => {
   const [x, setX] = useState(false);
   const [y, setY] = useState(false);
+  const [z, setZ] = useState(false);
 
   const modalClose = () => {
-    const close = modal(<div>Modal
+    const close = modal(<h1>Modal
       <button onClick={() => close()}>close</button>
-    </div>);
+    </h1>);
   };
 
   return (
     <div>
-
       <div>
         <h1>Modal</h1>
         <button onClick={modalClose}>modal</button>
       </div>
-
+      <div>
+        <h1>Alert</h1>
+        <button onClick={() => alert('1')}>alert</button>
+      </div>
+      <div>
+        <h1>Confirm</h1>
+        <button onClick={() => confirm('1', () => {console.log('yes');}, () => {console.log('no');})}>confirm</button>
+      </div>
       <div>
         <h1>Default Dialog</h1>
         <button onClick={() => setX(!x)}>click</button>
@@ -44,14 +51,17 @@ const DialogExample: React.FunctionComponent = () => {
       </div>
 
       <div>
-        <h1>Alert</h1>
-        <button onClick={() => alert('1')}>alert</button>
+        <h1>Dialog with Mask Disabled</h1>
+        <button onClick={() => setZ(!z)}>click</button>
+        <Dialog visible={z} maskClose={true} enableMask={false} buttons={
+          [
+            <button onClick={() => {setZ(false);}}>1</button>,
+            <button onClick={() => {setZ(false);}}>2</button>
+          ]
+        } onClose={() => {setZ(false);}}>
+          <strong>hi</strong>
+        </Dialog>
       </div>
-      <div>
-        <h1>Confirm</h1>
-        <button onClick={() => confirm('1', () => {console.log('yes');}, () => {console.log('no');})}>confirm</button>
-      </div>
-
     </div>
   );
 };
