@@ -10,7 +10,7 @@ const LayoutExample: React.FunctionComponent = () => {
     <div>
       <div>
         <h1>第四个例子</h1>
-        <Layout>
+        <Layout className='hi'>
           <Sider>Sider</Sider>
           <Layout>
             <Header>header</Header>

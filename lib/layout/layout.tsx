@@ -14,10 +14,12 @@ const Layout: React.FunctionComponent<Props> = (props) => {
   const {className, ...rest} = props;
   const children = props.children as Array<ReactElement>;
   const hasSider = 'length' in children &&
-    children.reduce((result, node) => result || node.type === Sider, false);
+    children.reduce((result, node) =>
+      result || node.type === Sider,
+      false);
 
   return (
-    <section className={sc('', {extra: [className, hasSider && 'hasSider'].join(' ')})} {...rest}>
+    <section className={sc({'': true, hasSider}, {extra: className})} {...rest}>
       {props.children}
     </section>
   );
