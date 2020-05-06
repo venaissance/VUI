@@ -1,8 +1,19 @@
 import React from 'react';
+import {scopedClassMaker} from '../classes';
 
-const Footer: React.FunctionComponent = () => {
+const sc = scopedClassMaker('vui-layout');
+
+interface Props extends React.HTMLAttributes<HTMLElement> {
+
+}
+
+const Footer: React.FunctionComponent<Props> = (props) => {
+  const {className, ...rest} = props;
+
   return (
-    <div>footer</div>
+    <section className={sc('footer', {extra: className})} {...rest}>
+      {props.children}
+    </section>
   );
 };
 

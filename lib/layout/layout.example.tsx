@@ -9,6 +9,18 @@ const LayoutExample: React.FunctionComponent = () => {
   return (
     <div>
       <div>
+        <h1>第四个例子</h1>
+        <Layout>
+          <Sider>Sider</Sider>
+          <Layout>
+            <Header>header</Header>
+            <Content>content</Content>
+            <Footer>footer</Footer>
+          </Layout>
+        </Layout>
+      </div>
+
+      <div>
         <h1>第一个例子</h1>
         <Layout className='aaa'>
           <Header>header</Header>
@@ -33,22 +45,12 @@ const LayoutExample: React.FunctionComponent = () => {
           <Header>header</Header>
           <Layout>
             <Content>content</Content>
-            <Sider>Sider</Sider>
+            <Sider>sider</Sider>
           </Layout>
           <Footer>footer</Footer>
         </Layout>
       </div>
-      <div>
-        <h1>第四个例子</h1>
-        <Layout>
-          <Sider>Sider</Sider>
-          <Layout>
-            <Header>header</Header>
-            <Content>content</Content>
-            <Footer>footer</Footer>
-          </Layout>
-        </Layout>
-      </div>
+
     </div>
   );
 };
