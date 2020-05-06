@@ -1,7 +1,7 @@
 import React from 'react';
 import './importIcons.js';
 import './icon.scss';
-import combineClassNames from '../helpers/combineClassNames';
+import classes from '../helpers/classes';
 
 interface IconProps extends React.SVGAttributes<SVGElement> {
   name: string;
@@ -9,7 +9,7 @@ interface IconProps extends React.SVGAttributes<SVGElement> {
 
 const Icon: React.FunctionComponent<IconProps> = ({className, name, ...restProps}) => {
   return (
-    <svg className={combineClassNames('vui-icon', className)} {...restProps} >
+    <svg className={classes('vui-icon', className)} {...restProps} >
       <use xlinkHref={`#${name}`}/>
     </svg>
   );

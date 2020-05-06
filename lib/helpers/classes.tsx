@@ -1,3 +1,9 @@
+function classes(...names: (string | undefined)[]) {
+  return names.filter(Boolean).join(' ');
+}
+
+export default classes;
+
 interface Options {
   extra: string | undefined
 }
@@ -8,11 +14,10 @@ interface ClassToggles {
 
 function scopedClassMaker(prefix: string) {
   return function (name: string | ClassToggles, options?: Options) {
-    // name: {hasSider: true, active:false, x: true, y: false}
     const nameObj = (typeof name === 'string') ? {[name]: name} : name;
 
     const scoped = Object.entries(nameObj)
-      .filter(kv => kv[1])
+      .filter(kv => kv[1] !== false)
       .map(kv => kv[0])
       .map(name => [prefix, name]
         .filter(Boolean).join('-'))

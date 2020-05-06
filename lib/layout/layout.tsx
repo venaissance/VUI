@@ -1,8 +1,7 @@
 import React, {ReactElement} from 'react';
-import {scopedClassMaker} from '../classes';
 import './layout.scss';
 import Sider from './sider';
-
+import {scopedClassMaker} from '../helpers/classes';
 
 const sc = scopedClassMaker('vui-layout');
 
