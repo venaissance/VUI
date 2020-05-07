@@ -1,18 +1,17 @@
 .vui-layout {
-  border: 1px solid red;
-  min-height: 50vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   &-content {
     flex-grow: 1;
-    border: 1px solid green;
   }
   & & {
-    border: 1px solid black;
+    border: 1px solid green;
     flex-direction: row;
     flex-grow: 1;
   }
   &-hasSider {
+    border: 1px solid red;
     flex-direction: row;
     .vui-layout {
       flex-direction: column;

@@ -4,13 +4,14 @@ import Sider from './sider';
 import Header from './header';
 import Content from './content';
 import Footer from './footer';
+import './layout.example.scss';
 
 const LayoutExample: React.FunctionComponent = () => {
   return (
     <div>
       <div>
         <h1>第四个例子</h1>
-        <Layout className='hi'>
+        <Layout className='sider-example'>
           <Sider>Sider</Sider>
           <Layout>
             <Header>header</Header>
@@ -32,7 +33,7 @@ const LayoutExample: React.FunctionComponent = () => {
         <h1>第二个例子</h1>
         <Layout>
           <Header>header</Header>
-          <Layout>
+          <Layout className='sider-example'>
             <Sider>sider</Sider>
             <Content>content</Content>
           </Layout>
@@ -43,7 +44,7 @@ const LayoutExample: React.FunctionComponent = () => {
         <h1>第三个例子</h1>
         <Layout>
           <Header>header</Header>
-          <Layout>
+          <Layout className='sider-example'>
             <Content>content</Content>
             <Sider>sider</Sider>
           </Layout>
