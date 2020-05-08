@@ -1,6 +1,7 @@
 /.idea/
 /test-results/
 /dist/*
+/doc/
 /lib/__tests__/__snapshots__/
 # Logs
 logs

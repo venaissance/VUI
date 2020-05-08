@@ -11,12 +11,14 @@ import './example.scss';
 import Footer from './lib/layout/footer';
 import IconDemo from './lib/icon/icon.demo';
 
+const logo = require('./assets/logo.png');
+
 ReactDOM.render(
   <Router>
     <Layout className='site-page'>
       <Header className='site-header'>
         <div className="vui-logo">
-          <img src='../../assets/cyber-logo.png' alt='vui'/>
+          <img src={logo.default} alt='vui'/>
           <span>VUI</span>
         </div>
       </Header>
