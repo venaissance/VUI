@@ -1,11 +1,13 @@
 @import "assets/styles/reset.scss";
 $padding: 20px 20px;
 $border-color: #eee;
+$main-color: #fddd9b;
+$shadow: 0 2px 8px #f0f1f2;
 .site-page {
   background: #fff;
 }
 .site-header {
-  box-shadow: 0 2px 8px #f0f1f2;
+  box-shadow: $shadow;
   .vui-logo {
     display: flex;
     justify-content: left;
@@ -16,6 +18,7 @@ $border-color: #eee;
   }
 }
 .site-sider {
+  background: #f9cc9d;
   border-right: 1px solid $border-color;
   h2 {
     margin: $padding;
@@ -23,15 +26,14 @@ $border-color: #eee;
     border-bottom: 1px solid $border-color;
   }
   ul {
-    padding: 0 20px;
     min-width: 12em;
     li {
-      padding: 8px 0;
-      :hover {
-        color: #c8bc03;
-      }
       a {
+        display: block;
+        padding: 8px 20px;
         color: rgba(0, 0, 0, .85);
+        &:hover { color: #fff; }
+        &.active { background: $main-color; }
       }
     }
   }
@@ -44,6 +46,5 @@ $border-color: #eee;
   font-size: 12px;
   color: #666;
   padding: 16px 0;
-  box-shadow: 0 2px 8px #f0f1f2;
-  border-top: 1px solid $border-color;
+  box-shadow: $shadow;
 }

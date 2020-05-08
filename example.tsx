@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {HashRouter as Router, Route, Link} from 'react-router-dom';
-import IconExample from './lib/icon/icon.example';
+import {HashRouter as Router, Route, NavLink} from 'react-router-dom';
 import DialogExample from './lib/dialog/dialog.example';
 import LayoutExample from './lib/layout/layout.example';
 import Header from './lib/layout/header';
@@ -10,13 +9,14 @@ import Sider from './lib/layout/sider';
 import Content from './lib/layout/content';
 import './example.scss';
 import Footer from './lib/layout/footer';
+import IconDemo from './lib/icon/icon.demo';
 
 ReactDOM.render(
   <Router>
     <Layout className='site-page'>
       <Header className='site-header'>
         <div className="vui-logo">
-          <img src='./assets/cyber-logo.png' alt='vui'/>
+          <img src='../../assets/cyber-logo.png' alt='vui'/>
           <span>VUI</span>
         </div>
       </Header>
@@ -25,18 +25,18 @@ ReactDOM.render(
           <h2>组件</h2>
           <ul>
             <li>
-              <Link to="/icon">Icon</Link>
+              <NavLink to="/icon">Icon</NavLink>
             </li>
             <li>
-              <Link to="/dialog">Dialog</Link>
+              <NavLink to="/dialog">Dialog</NavLink>
             </li>
             <li>
-              <Link to="/layout">Layout</Link>
+              <NavLink to="/layout">Layout</NavLink>
             </li>
           </ul>
         </Sider>
         <Content className='site-content'>
-          <Route path="/icon" component={IconExample}/>
+          <Route path="/icon" component={IconDemo}/>
           <Route path="/dialog" component={DialogExample}/>
           <Route path="/layout" component={LayoutExample}/>
         </Content>

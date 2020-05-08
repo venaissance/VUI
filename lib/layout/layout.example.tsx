@@ -9,14 +9,14 @@ import './layout.example.scss';
 const LayoutExample: React.FunctionComponent = () => {
   return (
     <div>
-      <div>
+      <div className='example'>
         <h1>第四个例子</h1>
         <Layout className='sider-example'>
-          <Sider>Sider</Sider>
+          <Sider className='example-sider'>Sider</Sider>
           <Layout>
-            <Header>header</Header>
-            <Content>content</Content>
-            <Footer>footer</Footer>
+            <Header className='example-header'>header</Header>
+            <Content className='example-content'>content</Content>
+            <Footer className='example-footer'>footer</Footer>
           </Layout>
         </Layout>
       </div>

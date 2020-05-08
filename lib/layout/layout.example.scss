@@ -1,3 +1,22 @@
+$font-color: #fff;
+.example {
+  padding: 20px 20px;
+  margin-bottom: 20px;
+}
 .sider-example {
   flex-direction: row !important;
+  color: $font-color;
+  font-size: 24px;
+}
+.example-sider {
+  background: #c4d08b;
+}
+.example-header {
+  background: #fef200;
+}
+.example-content {
+  background: #8cb6c1;
+}
+.example-footer {
+  background: #eee;
 }
