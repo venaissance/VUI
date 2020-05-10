@@ -1,4 +1,4 @@
-# [VUI](https://github.com/venaissance/VUI) &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/venaissance/VUI/blob/master/LICENSE) [![npm version](https://img.shields.io/badge/npm-v0.1.0-blue.svg)](https://www.npmjs.com/package/vui666)
+# [VUI](https://github.com/venaissance/VUI) &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/venaissance/VUI/blob/master/LICENSE) [![<ORG_NAME>](https://circleci.com/gh/venaissance/VUI.svg?style=svg)](https://circleci.com/gh/venaissance/VUI) [![npm version](https://badge.fury.io/js/vui666.svg)](https://badge.fury.io/js/vui666)
 
 # Steps to View Examples
 
