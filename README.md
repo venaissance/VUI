@@ -6,6 +6,6 @@
 1. `yarn install`
 1. `yarn doc`
 
-Follow above 3 steps, the example page will show in your `./doc` directory, you can open `doc/index.html` in your browser! 
+Follow above 3 steps, the example page will show in your `./doc` directory. Now you can open `doc/index.html` in your browser and see all the examples! 
 
 Have fun!
