@@ -65,10 +65,11 @@ workflows:
           requires:
             - build
 #          filters: 加了之后就publish就从workflow里消失了，无解bug
-#            tags:
-#              only: /^v.*/
-#            branches:
-#              ignore: /.*/
+          filters: 加了之后就publish就从workflow里消失了，无解bug
+            tags:
+              only: /^v.*/
+            branches:
+              ignore: /.*/
       - test:
           requires:
             - prepare
