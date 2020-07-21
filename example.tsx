@@ -11,29 +11,29 @@ import './example.scss';
 import Footer from './lib/layout/footer';
 import IconDemo from './lib/icon/icon.demo';
 
-const logo = require('./assets/logo.png');
+// const logo = require('./assets/logo.png');
 
 ReactDOM.render(
   <Router>
     <Layout className='site-page'>
       <Header className='site-header'>
         <div className="vui-logo">
-          <img src={logo.default} alt='vui'/>
-          <span>VUI</span>
+          {/*<img src={logo.default} alt='vui'/>*/}
+          <h1>VUI</h1>
         </div>
       </Header>
       <Layout>
         <Sider className='site-sider'>
-          <h2>组件</h2>
+          <h2>组件列表</h2>
           <ul>
             <li>
-              <NavLink to="/icon">Icon</NavLink>
+              <NavLink to="/icon">Icon 图标组件</NavLink>
             </li>
             <li>
-              <NavLink to="/dialog">Dialog</NavLink>
+              <NavLink to="/dialog">Dialog 对话框组件</NavLink>
             </li>
             <li>
-              <NavLink to="/layout">Layout</NavLink>
+              <NavLink to="/layout">Layout 布局组件</NavLink>
             </li>
           </ul>
         </Sider>
@@ -44,7 +44,7 @@ ReactDOM.render(
         </Content>
       </Layout>
       <Footer className='site-footer'>
-        &copy; 米大王
+        &copy; VUI
       </Footer>
     </Layout>
   </Router>, document.querySelector('#root')
